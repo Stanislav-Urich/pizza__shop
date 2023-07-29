@@ -1,0 +1,47 @@
+.container
+    padding: 0 10px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+   
+    @media (max-width: 875px)
+        justify-content: center 
+        
+    
+
+    
+.nav_category
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    gap: 5px
+
+    @media ( max-width: 485px)
+        gap: 0
+        flex-direction: column
+
+.nav__menu
+    height: 50px
+    padding: 0 25px
+    background-color: #f7f3f3
+    border-radius: 30px
+    margin-right: 10px
+    border: none
+    list-style-type: none
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+
+    @media (max-width: 630px)
+        margin-bottom: 10px
+        padding: 2px 10px
+        height: 25px
+
+    
+
+.active
+    background-color: #282828
+    color: #ffff
+
+    

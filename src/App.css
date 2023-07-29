@@ -1,0 +1,11 @@
+.App {
+    background-color: rgb(220, 215, 140);
+}
+
+.wrapper {
+    max-width: 1450px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #FFFFFF
+
+}
