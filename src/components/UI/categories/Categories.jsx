@@ -2,11 +2,11 @@
 import { useState } from 'react';
 import st from './categories.module.sass'
 
-const Categories = ({onClickCategory, categoryType}) => {
+const Categories = ({onClickCategory}) => {
 
     const [active, setActive] = useState(0)
     
-    const item = ['Все', 'Мясные', 'Вегетаринские', 'Гриль', 'Острые']
+    const items = ['Все', 'Мясные', 'Вегетаринские', 'Гриль', 'Острые']
 
 
     const change = (index)=> {
@@ -18,7 +18,7 @@ const Categories = ({onClickCategory, categoryType}) => {
     return (
         <div className={st.container}>
             <ul className={st.nav_category}>
-                {item.map((item, index) => (
+                {items.map((item, index) => (
                     <li
                         onClick={()=>change(index)}
                         key={item}

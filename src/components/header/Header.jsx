@@ -3,9 +3,10 @@ import basket from './img/basket.svg'
 
 import st from './header.module.sass'
 import { Link } from 'react-router-dom';
+import Search from '../UI/input/Search';
 
 
-const Header = () => {
+const Header = ({searchValue, setSearhValue}) => {
     return (
         <div className={st.header__wrapper}>
             <div className={st.logo_block}>
@@ -14,6 +15,7 @@ const Header = () => {
                     <h1>REACT PIZZA</h1>
                     <p>самая вкусная пицца во вселенной</p>
                 </div>
+                <Search searchValue={searchValue} setSearhValue={setSearhValue}/>
             </div>
 
             <div className={st.basket_case}>
