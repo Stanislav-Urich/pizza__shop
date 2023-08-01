@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Search from '../UI/input/Search';
 
 
-const Header = ({searchValue, setSearhValue}) => {
+const Header = () => {
     return (
         <div className={st.header__wrapper}>
             <div className={st.logo_block}>
@@ -15,7 +15,7 @@ const Header = ({searchValue, setSearhValue}) => {
                     <h1>REACT PIZZA</h1>
                     <p>самая вкусная пицца во вселенной</p>
                 </div>
-                <Search searchValue={searchValue} setSearhValue={setSearhValue}/>
+                <Search />
             </div>
 
             <div className={st.basket_case}>

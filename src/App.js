@@ -1,28 +1,32 @@
 import { Routes, Route } from 'react-router-dom'
+import { useState } from 'react';
 
-import './App.css';
 import Basket from './components/basket/Basket';
 import BodyMenu from './components/body/BodyMenu';
 import Header from './components/header/Header';
-import { useState } from 'react';
+import {SearchContext} from './context/SearchContext';
+
+import './App.css';
 
 function App() {
 
-const [searchValue, setSearhValue] = useState('')
-console.log(searchValue);
+  const [searchValue, setSearchValue] = useState('');
+
   return (
     <div className="App">
-      <div className='wrapper'>
-        <Header searchValue={searchValue} setSearhValue={setSearhValue} />
-        {/* <BodyMenu/> */}
-        <Routes>
-          <Route path='/basket' element={<Basket />} />
-          <Route path='/' element={<BodyMenu searchValue={searchValue} />} />
-          {/* <Route path='*' element={<BodyMenu />} /> */}
-        </Routes>
-      </div>
+      <SearchContext.Provider value={{ searchValue, setSearchValue }}>
+        <div className='wrapper'>
+          <Header />
+          <Routes>
+            <Route path='/basket' element={<Basket />} />
+            <Route path='/' element={<BodyMenu searchValue={searchValue} />} />
+            {/* <Route path='*' element={<BodyMenu />} /> */}
+          </Routes>
+        </div>
+      </SearchContext.Provider>
     </div >
   );
 }
 
 export default App;
+
